@@ -1,5 +1,7 @@
+import "./App.scss";
+
 function App() {
-  return <div>App.tsx</div>;
+  return <button className="button">App.tsx</button>;
 }
 
 export default App;
