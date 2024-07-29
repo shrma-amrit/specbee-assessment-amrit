@@ -8,7 +8,6 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         implementation: sass,
       },
     },
