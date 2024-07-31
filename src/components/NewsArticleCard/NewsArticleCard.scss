@@ -1,0 +1,22 @@
+@import "../../App.scss";
+
+.news-article-card {
+  border-bottom: 1px solid $border-color;
+  padding: $padding-base 0;
+
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: $margin-base;
+  }
+
+  p {
+    font-size: $font-size-base;
+    margin-bottom: 5px;
+    color: $font-color;
+  }
+
+  p:last-child {
+    font-size: $font-size-small;
+    color: $font-color-light;
+  }
+}

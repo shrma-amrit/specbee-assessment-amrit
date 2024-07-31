@@ -1,0 +1,20 @@
+@import "../../../App.scss";
+
+.pagination {
+  @include flex-center();
+  margin-top: $padding-base;
+
+  button {
+    margin: 0 $margin-base;
+    @include button-style();
+
+    &:disabled {
+      background-color: $secondary-color;
+      cursor: not-allowed;
+    }
+  }
+
+  span {
+    font-size: $font-size-base;
+  }
+}
