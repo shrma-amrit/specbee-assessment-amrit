@@ -17,6 +17,12 @@ const NewsArticlesList: React.FC = () => {
   const selectedCategories = useAppSelector(
     (state: RootState) => state.manageNewsArticles.selectedCategories
   );
+  const selectedSortBy = useAppSelector(
+    (state: RootState) => state.manageNewsArticles.selectedSortBy
+  );
+  const selectedSortingOrder = useAppSelector(
+    (state: RootState) => state.manageNewsArticles.selectedSortingOrder
+  );
 
   const filteredNewsArticles = useMemo(() => {
     let filtered = [...newsArticles];
@@ -33,8 +39,39 @@ const NewsArticlesList: React.FC = () => {
           )
         : filtered;
 
+    filtered.sort((a, b) => {
+      if (selectedSortBy === "Date") {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+
+        if (isNaN(dateA.getTime()) && isNaN(dateB.getTime())) {
+          return 0;
+        } else if (isNaN(dateA.getTime())) {
+          return 1;
+        } else if (isNaN(dateB.getTime())) {
+          return -1;
+        }
+
+        return selectedSortingOrder === "asc"
+          ? dateA.getTime() - dateB.getTime()
+          : dateB.getTime() - dateA.getTime();
+      } else if (selectedSortBy === "Title") {
+        return selectedSortingOrder === "asc"
+          ? a.title.localeCompare(b.title)
+          : b.title.localeCompare(a.title);
+      }
+
+      return 0;
+    });
+
     return filtered;
-  }, [newsArticles, selectedAuthors, selectedCategories]);
+  }, [
+    newsArticles,
+    selectedAuthors,
+    selectedCategories,
+    selectedSortBy,
+    selectedSortingOrder,
+  ]);
 
   useEffect(() => {
     setCurrentPage(1);

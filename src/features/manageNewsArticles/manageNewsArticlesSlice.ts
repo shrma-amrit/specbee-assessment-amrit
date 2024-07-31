@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ErrorType, NewsArticle, NewsArticlesState } from "./types";
+import { ErrorType, NewsArticle, NewsArticlesState, SortByType } from "./types";
 
 const initialState: NewsArticlesState = {
   newsArticles: [],
@@ -7,6 +7,8 @@ const initialState: NewsArticlesState = {
   loadingGetAllNewsArticles: false,
   selectedAuthors: [],
   selectedCategories: [],
+  selectedSortBy: "Date",
+  selectedSortingOrder: "desc",
 };
 
 export const manageNewsArticlesSlice = createSlice({
@@ -34,6 +36,18 @@ export const manageNewsArticlesSlice = createSlice({
     setSelectedCategories: (state, action: PayloadAction<string[]>) => {
       state.selectedCategories = action.payload;
     },
+    setSortBy(state, action: PayloadAction<SortByType>) {
+      state.selectedSortBy = action.payload;
+      if (action.payload === "Date") {
+        state.selectedSortingOrder = "desc";
+      } else if (action.payload === "Title") {
+        state.selectedSortingOrder = "asc";
+      }
+    },
+    toggleSortingOrder(state) {
+      state.selectedSortingOrder =
+        state.selectedSortingOrder === "asc" ? "desc" : "asc";
+    },
   },
 });
 
@@ -43,6 +57,8 @@ export const {
   setError,
   setSelectedAuthors,
   setSelectedCategories,
+  setSortBy,
+  toggleSortingOrder,
 } = manageNewsArticlesSlice.actions;
 
 export default manageNewsArticlesSlice.reducer;

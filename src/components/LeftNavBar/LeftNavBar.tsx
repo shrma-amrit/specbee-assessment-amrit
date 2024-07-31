@@ -7,8 +7,8 @@ import { SortSection } from "../SortSection";
 const LeftNavBar: React.FC = () => {
   return (
     <div className="left-nav-bar">
-      <AuthorFilterSection />
       <CategoryFilterSection />
+      <AuthorFilterSection />
       <SortSection />
     </div>
   );
