@@ -93,13 +93,7 @@ const NewsArticlesList: React.FC = () => {
     <div className="content">
       <div className="news-articles-list">
         {currentArticles.map((newsArticle) => (
-          <NewsArticleCard
-            key={newsArticle.url}
-            title={newsArticle.title}
-            date={newsArticle.date}
-            body={newsArticle.body}
-            author={newsArticle.author}
-          />
+          <NewsArticleCard key={newsArticle.url} newsArticle={newsArticle} />
         ))}
       </div>
       <Pagination

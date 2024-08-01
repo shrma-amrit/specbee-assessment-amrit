@@ -1,7 +1,16 @@
 @import "../../App.scss";
 
 .left-nav-bar {
-  width: 200px;
-  padding: $padding-base;
-  border-right: 1px solid $border-color;
+  border-radius: 6px;
+  padding: $padding-md $padding-sm;
+  box-shadow: 0px 0px 2px 0px $shadow-color;
+  min-width: 256px;
+
+  @media (max-width: 425px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 0cqh 15px 0px $shadow-color;
+  }
 }

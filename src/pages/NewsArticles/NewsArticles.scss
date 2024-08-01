@@ -1,4 +1,25 @@
+@import "../../App.scss";
+
 .news-articles-page {
   display: flex;
+  gap: 40px;
+
+  @media (max-width: 425px) {
+    position: relative;
+    gap: 0;
+  }
+}
+
+.news-articles {
   margin: 80px;
+
+  @media (max-width: 425px) {
+    margin: $margin-sm;
+  }
+}
+
+.filter-icon {
+  border: 1px solid $border-color;
+  padding: $padding-sm;
+  cursor: pointer;
 }

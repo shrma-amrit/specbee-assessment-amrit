@@ -4,7 +4,11 @@
   margin-bottom: $padding-base;
 
   h3 {
-    font-size: $font-size-large;
-    margin-bottom: $margin-base;
+    background-color: $bg-primary;
+    font-size: $font-size-md;
+    margin: 0;
+    margin-bottom: $margin-xs;
+    border-radius: 4px;
+    padding: 6px $padding-xs;
   }
 }

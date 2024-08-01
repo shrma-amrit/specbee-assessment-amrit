@@ -5,7 +5,7 @@
   margin-top: $padding-base;
 
   button {
-    margin: 0 $margin-base;
+    margin: 0 $margin-xs;
     @include button-style();
 
     &:disabled {
@@ -15,6 +15,6 @@
   }
 
   span {
-    font-size: $font-size-base;
+    font-size: $font-size-md;
   }
 }

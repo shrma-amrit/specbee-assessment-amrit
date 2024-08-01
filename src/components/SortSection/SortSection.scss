@@ -4,7 +4,21 @@
   margin-top: $padding-base;
 
   h3 {
-    font-size: $font-size-large;
-    margin-bottom: $margin-base;
+    font-size: $font-size-md;
+    margin: 0;
   }
+}
+
+.sort-heading {
+  @include flex-center;
+  justify-content: space-between;
+  background-color: $bg-primary;
+  margin-bottom: $margin-xs;
+  border-radius: 4px;
+  padding: 6px $padding-xs;
+}
+
+.sort-order-btn {
+  display: flex;
+  cursor: pointer;
 }

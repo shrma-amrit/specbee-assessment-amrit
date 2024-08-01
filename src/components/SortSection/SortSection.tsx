@@ -8,6 +8,7 @@ import {
   setSortBy,
   toggleSortingOrder,
 } from "../../features/manageNewsArticles/manageNewsArticlesSlice";
+import { FaRegArrowAltCircleDown, FaRegArrowAltCircleUp } from "react-icons/fa";
 
 const SortSection: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -32,11 +33,15 @@ const SortSection: React.FC = () => {
 
   return (
     <div className="sort-section">
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div className="sort-heading">
         <h3>Sort By</h3>
-        <button onClick={handleSortingOrderChange}>
-          {selectedSortingOrder}
-        </button>
+        <div className="sort-order-btn" onClick={handleSortingOrderChange}>
+          {selectedSortingOrder === "asc" ? (
+            <FaRegArrowAltCircleUp />
+          ) : (
+            <FaRegArrowAltCircleDown />
+          )}
+        </div>
       </div>
       <Radio
         name="sort"

@@ -1,13 +1,20 @@
 $primary-color: #007bff;
 $secondary-color: #cccccc;
+$bg-primary: #f8f9fa;
+$shadow-color: #171a1f1f;
 $border-color: #e0e0e0;
-$font-color: #555;
-$font-color-light: #888;
-$font-size-base: 1em;
-$font-size-large: 1.2em;
-$font-size-small: 0.9em;
+$font-color: #171a1f;
+$font-color-light: #565d6d;
+$font-size-sm: 0.75em;
+$font-size-md: 1em;
+$font-size-lg: 1.25em;
 $padding-base: 20px;
-$margin-base: 10px;
+$padding-xs: 0.5em;
+$padding-sm: 0.75em;
+$padding-md: 1em;
+$margin-xs: 0.5em;
+$margin-sm: 0.75em;
+$margin-md: 1em;
 
 @mixin flex-center {
   display: flex;
@@ -21,7 +28,7 @@ $margin-base: 10px;
 
 @mixin button-style($bg-color: $primary-color, $color: white) {
   padding: 5px 10px;
-  font-size: $font-size-base;
+  font-size: $font-size-md;
   cursor: pointer;
   border: none;
   background-color: $bg-color;

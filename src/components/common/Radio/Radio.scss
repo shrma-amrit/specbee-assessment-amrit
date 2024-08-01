@@ -3,18 +3,23 @@
 .radio-group {
   display: flex;
   flex-direction: column;
+  padding: 0 $padding-sm;
 }
 
 .radio {
   display: flex;
   align-items: center;
-  margin-bottom: $margin-base;
+  margin-bottom: $margin-xs;
 
   input[type="radio"] {
-    margin-right: $margin-base;
+    margin-right: $margin-xs;
   }
 
   label {
-    font-size: $font-size-base;
+    font-size: $font-size-md;
+  }
+
+  &:hover {
+    background-color: $bg-primary;
   }
 }
