@@ -20,6 +20,11 @@
 
 .filter-icon {
   border: 1px solid $border-color;
+  border-radius: 4px;
   padding: $padding-sm;
   cursor: pointer;
+
+  &:hover {
+    background-color: $bg-primary;
+  }
 }

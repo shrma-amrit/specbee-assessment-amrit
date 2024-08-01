@@ -2,19 +2,44 @@
 
 .pagination {
   @include flex-center();
+  justify-content: flex-end;
+  gap: 10px;
   margin-top: $padding-base;
 
   button {
     margin: 0 $margin-xs;
     @include button-style();
+    @include flex-center();
 
     &:disabled {
-      background-color: $secondary-color;
+      color: $font-color-light;
       cursor: not-allowed;
     }
   }
 
   span {
     font-size: $font-size-md;
+  }
+}
+
+.pagination-btn {
+  @include flex-center();
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+
+  &:hover {
+    background-color: $bg-primary;
+    cursor: pointer;
+  }
+}
+
+.selected-page {
+  background-color: $selected-color;
+  color: #fff;
+
+  &:hover {
+    background-color: $selected-color;
+    cursor: pointer;
   }
 }

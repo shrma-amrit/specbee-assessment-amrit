@@ -1,5 +1,6 @@
 $primary-color: #007bff;
 $secondary-color: #cccccc;
+$selected-color: #1e2128;
 $bg-primary: #f8f9fa;
 $shadow-color: #171a1f1f;
 $border-color: #e0e0e0;
@@ -31,7 +32,6 @@ $margin-md: 1em;
   font-size: $font-size-md;
   cursor: pointer;
   border: none;
-  background-color: $bg-color;
-  color: $color;
+  color: $font-color;
   @include border-radius();
 }

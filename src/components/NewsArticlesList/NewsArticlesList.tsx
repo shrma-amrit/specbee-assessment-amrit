@@ -82,6 +82,7 @@ const NewsArticlesList: React.FC = () => {
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
+    window.scrollTo(0, 0);
   };
 
   const currentArticles = filteredNewsArticles.slice(
@@ -96,11 +97,17 @@ const NewsArticlesList: React.FC = () => {
           <NewsArticleCard key={newsArticle.url} newsArticle={newsArticle} />
         ))}
       </div>
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
+      {totalPages > 0 ? (
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
+      ) : (
+        <div className="no-item-found">
+          <p>No items found</p>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Pagination.scss";
+import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
 
 interface PaginationProps {
   currentPage: number;
@@ -18,16 +19,29 @@ const Pagination: React.FC<PaginationProps> = ({
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
-        Previous
+        <FaCaretLeft />
       </button>
-      <span>
+      {Array.from({ length: totalPages }, (_, index) => {
+        return (
+          <span
+            key={index}
+            className={`pagination-btn ${
+              currentPage === index + 1 ? "selected-page" : ""
+            }`}
+            onClick={() => onPageChange(index + 1)}
+          >
+            {index + 1}
+          </span>
+        );
+      })}
+      {/* <span>
         {currentPage} / {totalPages}
-      </span>
+      </span> */}
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
-        Next
+        <FaCaretRight />
       </button>
     </div>
   );
